@@ -23,7 +23,7 @@ public class CoolWeatherDB {
 	
 	private SQLiteDatabase db;
 	
-	/*
+	/**
 	 * 将构造方法私有化
 	 */
 	private CoolWeatherDB(Context context) {
@@ -31,7 +31,7 @@ public class CoolWeatherDB {
 		db = dbHelper.getWritableDatabase();
 	}
 	
-	/*
+	/**
 	 * 获取CoolWeatherDB的实例
 	 */
 	 public synchronized static CoolWeatherDB getInstance(Context context) {
@@ -40,7 +40,7 @@ public class CoolWeatherDB {
 		}
 		 return coolWeatherDB;
 	 }
-	 /*
+	 /**
 	  * 将Province实例存储到数据库
 	  */
 	 public void saveProvince(Province province) {
@@ -51,7 +51,7 @@ public class CoolWeatherDB {
 			db.insert("Province", null, values);
 		}
 	 }
-	 /*
+	 /**
 	  * 从数据库读取全国所有省份的信息
 	  */
 	 public List<Province> loadProvinces() {
@@ -68,7 +68,7 @@ public class CoolWeatherDB {
 		}
 		 return list;
 	 }
-	 /*
+	 /**
 	  * 将City实例存储到数据库
 	  */
 	 public void saveCity(City city) {
@@ -80,7 +80,7 @@ public class CoolWeatherDB {
 			 db.insert("City", null, values);
 		}
 	 }
-	 /*
+	 /**
 	  * 从数据库读取某省份的所有城市信息
 	  */
 	 public List<City> loadCities(int provinceId) {
@@ -98,7 +98,7 @@ public class CoolWeatherDB {
 		}
 		 return list;
 	 }
-	 /*
+	 /**
 	  * 将County实例存储到数据库
 	  */
 	 public void saveCounty(County county) {
@@ -110,7 +110,7 @@ public class CoolWeatherDB {
 			 db.insert("County", null, values);
 		}
 	 }
-	 /*
+	 /**
 	  * 从数据库读取某城市的所有县信息
 	  */
 	 public List<County> loadCounties(int cityId) {
